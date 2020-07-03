@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MazeGenerator : MonoBehaviour
 {
-    public GameObject roomPrefab;
+    public List<GameObject> roomPrefabs = new List<GameObject>();
 
     public int amountOfRooms = 2;
     public LayerMask roomLayer;
@@ -16,7 +16,7 @@ public class MazeGenerator : MonoBehaviour
 
     private void Start() {
         mazeParent = new GameObject("Maze Parent");
-        currentRoom = Instantiate(roomPrefab, Vector3.zero, Quaternion.identity, mazeParent.transform).GetComponent<RoomBehaviour>();
+        currentRoom = Instantiate(roomPrefabs[0], Vector3.zero, Quaternion.identity, mazeParent.transform).GetComponent<RoomBehaviour>();
         currentRoom.gameObject.name = "StartRoom";
         builtRooms.Add(currentRoom);
     }
@@ -37,7 +37,7 @@ public class MazeGenerator : MonoBehaviour
             return;
         }
 
-        joinedRoom = Instantiate(roomPrefab, Vector3.one * 999, Quaternion.identity, mazeParent.transform).GetComponent<RoomBehaviour>();
+        joinedRoom = Instantiate(roomPrefabs[Random.Range(0,roomPrefabs.Count)], Vector3.one * 999, Quaternion.identity, mazeParent.transform).GetComponent<RoomBehaviour>();
 
         RandomDoor();
     }

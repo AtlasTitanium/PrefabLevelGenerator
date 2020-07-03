@@ -164,8 +164,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0406c41178c132e419b7ae0b2066e2de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomPrefab: {fileID: 6657192650256054149, guid: e149e5f843012fa48923d114e6bba5d6,
-    type: 3}
+  roomPrefabs:
+  - {fileID: 6657192650256054149, guid: e149e5f843012fa48923d114e6bba5d6, type: 3}
+  - {fileID: 6657192650256054149, guid: 019b4b2807ad70246b9e1cd3848c4d81, type: 3}
+  - {fileID: 6657192650256054149, guid: 39b5ec78cd1759f469ebdd32faa617cb, type: 3}
   amountOfRooms: 20
   roomLayer:
     serializedVersion: 2
@@ -244,7 +246,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 2.204e-42, y: 1.01e-43, z: 980710.94, w: 0}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
